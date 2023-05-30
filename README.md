@@ -1,1 +1,1 @@
-# vc_ru_parser
+# vc_ru_parser V1.0
