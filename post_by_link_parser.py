@@ -7,7 +7,7 @@ def _text_handler(data):
     """функция обработки текста, чтобы в итоге оставить лишь чистый текст с именем тега"""
     if data.name in ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "b", "li"]:
         if data.text:
-            return [(data.name, data.text.strip())]
+            return [(data.text.strip(), data.name)]
         else:
             return []
     else:

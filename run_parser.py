@@ -41,12 +41,12 @@ def main():
         article_ids = new_data[1]
         last_sorting_value = new_data[2]
 
+    links = list(set(links))
     chosen_links_list = [link for link in links if link.startswith(choosen_category[0])]
 
     for article_link in chosen_links_list:
         pass
         article_data = get_post_data(article_url=article_link)
-        print(article_data)
         print(write_data_in_csv(data=article_data, article_link=article_link))
 
 

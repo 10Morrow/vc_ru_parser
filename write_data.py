@@ -1,3 +1,4 @@
+import os
 import csv
 import datetime
 
@@ -5,6 +6,9 @@ import datetime
 def write_data_in_csv(data, article_link):
     """создает .csv файл и записывает в него данные статьи"""
     current_time = datetime.datetime.now()
+    if not os.path.exists('data'):
+        os.makedirs('data')
+        print("Папка создана")
     filename = current_time.strftime("data/article_%Y-%m-%d_%H-%M-%S.csv")
     with open(filename, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
